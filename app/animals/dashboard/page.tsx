@@ -7,7 +7,6 @@ export const metadata = {
 };
 
 export default async function AnimalsPage() {
-  // 4. If the sessionToken cookie is valid, allow access to dashboard page
   const animals = await getAnimals();
   return <AnimalsForm animals={animals} />;
 }

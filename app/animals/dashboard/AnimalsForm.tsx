@@ -19,9 +19,6 @@ export default function AnimalsForm(props: Props) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const router = useRouter();
-
-  // Reset form states to default values so that the form is
-  // cleared after an add, edit or delete action
   function resetFormStates() {
     setId(0);
     setFirstName('');
@@ -84,21 +81,13 @@ export default function AnimalsForm(props: Props) {
                             const body = await response.json();
                             newErrorMessage = body.error;
                           } catch (error) {
-                            // Don't fail if response JSON body
-                            // cannot be parsed
                             console.log('err', error);
                           }
-
-                          // TODO: Use toast instead of showing
-                          // this below creation / update form
                           setErrorMessage(newErrorMessage);
                           return;
                         }
 
                         router.refresh();
-
-                        // Reset form states if deleting an
-                        // animal after editing it
                         resetFormStates();
                       }}
                     >
@@ -142,8 +131,6 @@ export default function AnimalsForm(props: Props) {
                       newErrorMessage = body.error;
                     } catch (error) {
                       console.log('err', error);
-                      // Don't fail if response JSON body cannot
-                      // be parsed
                     }
 
                     setErrorMessage(newErrorMessage);
@@ -172,8 +159,6 @@ export default function AnimalsForm(props: Props) {
                       const body = await response.json();
                       newErrorMessage = body.error;
                     } catch (error) {
-                      // Don't fail if response JSON body cannot
-                      // be parsed
                       console.log('err', error);
                     }
 
