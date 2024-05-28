@@ -7,13 +7,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "migrate": "ley --require tsx/cjs",
     "lint": "next lint"
   },
   "dependencies": {
+    "@upleveled/ley": "^0.8.6",
+    "dotenv-safe": "^9.1.0",
     "next": "15.0.0-rc.0",
+    "postgres": "^3.4.4",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "sass": "^1.77.2",
-    "sharp": "^0.33.4"
+    "server-only": "^0.0.1",
+    "sharp": "^0.33.4",
+    "tsx": "^4.11.0"
+  },
+  "devDependencies": {
+    "@ts-safeql/eslint-plugin": "^3.2.2",
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint-config-upleveled": "^8.1.9",
+    "libpg-query": "^16.2.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-embed": "^0.4.15",
+    "prettier-plugin-sql": "^0.18.0",
+    "stylelint": "^16.6.0",
+    "stylelint-config-upleveled": "^1.1.2",
+    "typescript": "5.4.5"
   }
 }
